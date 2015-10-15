@@ -1,0 +1,126 @@
+<?xml version='1.0'?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+
+<!--
+     This file is part of capataz
+
+     Copyright (C) 2015 Eric Le Bihan <eric.le.bihan.dev@free.fr>
+
+     This program is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 2 of the License, or
+     (at your option) any later version.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<refentry id="capataz" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <refentryinfo>
+
+    <title>capataz</title>
+    <productname>capataz</productname>
+
+      <authorgroup>
+        <author>
+          <contrib>Developer</contrib>
+          <firstname>Eric</firstname>
+          <surname>Le Bihan</surname>
+          <email>eric.le.bihan.dev@free.fr</email>
+        </author>
+      </authorgroup>
+
+  </refentryinfo>
+
+  <refmeta>
+    <refentrytitle>capataz</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>capataz</refname>
+    <refpurpose>Monitor the execution of a program</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>capataz</command>
+        <arg choice="opt" rep="repeat">OPTIONS</arg>
+        <arg choice="plain">program</arg>
+        <arg choice="opt" rep="repeat">argument</arg>
+      </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>Description</title>
+    <para><command>capataz</command> monitors the execution of a program and
+    takes actions according to its exit status.</para>
+  </refsect1>
+
+  <refsect1>
+    <title>Options</title>
+
+    <para>The following options are understood:</para>
+
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-F</option></term>
+        <term><option>--forever</option></term>
+        <listitem><para>Run the program forever</para></listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-N</option></term>
+        <term><option>--iterations=</option></term>
+        <listitem><para>Set the number of iterations</para></listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-d</option></term>
+        <term><option>--delay=</option></term>
+        <listitem><para>Set the number of seconds to wait between iterations</para></listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-s</option></term>
+        <term><option>--success=</option></term>
+        <listitem><para>Set the command to execute on success</para></listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-f</option></term>
+        <term><option>--failure=</option></term>
+        <listitem><para>Set the command to execute on failure</para></listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+  <refsect1>
+    <title>Examples</title>
+
+    <example>
+      <title>Monitor the build of a program</title>
+
+      <programlisting>% capataz -F -d 5 -s 'echo Success' -f 'echo Failed' -- make -C /some/path</programlisting>
+
+      <para>This runs the command <command>make</command> forever, waiting 5
+      seconds between each run. If the build is successful, "Success" is
+      printed, "Failed" otherwise.</para>
+
+    </example>
+
+  </refsect1>
+
+</refentry>
+
+<!-- vim: set ts=2 sts=2 sw=2 et ai : -->

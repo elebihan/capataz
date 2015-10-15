@@ -1,0 +1,15 @@
+#compdef capataz
+
+_arguments -w -S -s \
+    '(-v --version)'{-v,--version}'' \
+    '(-F --forever)'{-F,--forever}'[Run the program forever]' \
+    '(-N --iterations)'{-N,--iterations}'[set the number of iterations]:number' \
+    '(-d --delay)'{-d,--delay}'[set the number of seconds between iterations]:number' \
+    '(-f --failure)'{-f,--failure}'[set command to run on failure]:command' \
+    '(-s --success)'{-s,--success}'[set command to run on success]:command' \
+    '*::arguments:_normal'
+
+# vim: ts=4 sts=4 sw=4 et ai ft=sh
+# Local Variables:
+# mode: sh
+# End:
