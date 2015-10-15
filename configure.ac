@@ -1,5 +1,5 @@
 AC_PREREQ(2.59)
-AC_INIT([capataz], [0.2.0])
+AC_INIT([capataz], [0.3.1])
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_MACRO_DIR([m4])
 
