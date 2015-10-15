@@ -6,3 +6,7 @@ endif
 
 EXTRA_DIST = \
 	autogen.sh
+
+dist_doc_DATA = \
+	NEWS.md \
+	README.md
