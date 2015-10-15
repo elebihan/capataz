@@ -1,6 +1,6 @@
 # What's New in Capataz?
 
-## [unreleased] - Unreleased
+## [0.2.0] - 2015-10-15
 ### Added
 
 - Initial version of `capataz`.
