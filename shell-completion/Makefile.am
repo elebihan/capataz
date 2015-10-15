@@ -1,0 +1,5 @@
+SUBDIRS =
+
+if ENABLE_ZSH_COMPLETION
+SUBDIRS += zsh
+endif
